@@ -1,15 +1,21 @@
 {
-  "name": "docker_example",
+  "name": "bottle-express",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "author": "Gustavo Marques",
-  "license": "ISC",
+  "description": "Projeto desenvolvido na disciplina de Programação Web 2",
+  "main": "main.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon main",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "express",
+    "whisky",
+    "node",
+    "summary"
+  ],
+  "author": "Gustavo Marques e Nelson Toneze",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.16.1"
+    "nodemon": "^2.0.15"
   }
 }
