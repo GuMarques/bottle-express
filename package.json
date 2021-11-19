@@ -1,21 +1,18 @@
 {
   "name": "bottle-express",
-  "version": "1.0.0",
-  "description": "Projeto desenvolvido na disciplina de Programação Web 2",
-  "main": "main.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "start": "nodemon main",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install:dev": "docker build -t bottle-express:dev .",
+    "start:dev": "docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 8080:8080 -e CHOKIDAR_USEPOLLING=true bottle-express:dev",
+    "start": "node ./bin/www"
   },
-  "keywords": [
-    "express",
-    "whisky",
-    "node",
-    "summary"
-  ],
-  "author": "Gustavo Marques e Nelson Toneze",
-  "license": "ISC",
   "dependencies": {
-    "nodemon": "^2.0.15"
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1"
   }
 }
