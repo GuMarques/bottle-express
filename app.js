@@ -10,8 +10,12 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 // view engine setup
+var mustacheExpress = require("mustache-express");
+var engine = mustacheExpress();
+app.engine("mustache", engine);
+
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'mustache');
 
 app.use(logger('dev'));
 app.use(express.json());

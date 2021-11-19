@@ -5,14 +5,17 @@
   "scripts": {
     "install:dev": "docker build -t bottle-express:dev .",
     "start:dev": "docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 8080:8080 -e CHOKIDAR_USEPOLLING=true bottle-express:dev",
-    "start": "node ./bin/www"
+    "start": "nodemon ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "mustache-express": "^1.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
