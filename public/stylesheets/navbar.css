@@ -16,7 +16,14 @@
     justify-content: space-between;
     padding: 0 50px;
   }
-  
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
   .logo {
     width: 130px;
   }
@@ -126,3 +133,7 @@
     margin-left: 1px;
     margin-right: 1px;
   }
+
+.site-wrap{
+  height:100vh;
+}
