@@ -16,4 +16,9 @@ router.get('/descricao', function(req, res, next) {
   res.render('descricao', { title: 'Descrição' });
 });
 
+/* GET descricao page. */
+router.get('/time', function(req, res, next) {
+  res.render('time', { title: 'Nosso Time' });
+});
+
 module.exports = router;
