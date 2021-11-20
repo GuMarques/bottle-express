@@ -6,4 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+/* GET ferramentas e tecnologias page. */
+router.get('/ferramentas', function(req, res, next) {
+  res.render('ferramentas', { title: 'Ferramentas e Tecnologias' });
+});
+
 module.exports = router;
