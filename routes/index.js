@@ -11,4 +11,9 @@ router.get('/ferramentas', function(req, res, next) {
   res.render('ferramentas', { title: 'Ferramentas e Tecnologias' });
 });
 
+/* GET descricao page. */
+router.get('/descricao', function(req, res, next) {
+  res.render('descricao', { title: 'Descrição' });
+});
+
 module.exports = router;
