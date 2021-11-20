@@ -21,4 +21,11 @@ router.get('/time', function(req, res, next) {
   res.render('time', { title: 'Nosso Time' });
 });
 
+/* GET descricao page. */
+router.get('/contato', function(req, res, next) {
+  res.render('contato', { title: 'Entre em COntato' });
+});
+
+
+
 module.exports = router;
