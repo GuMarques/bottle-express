@@ -1,87 +1,130 @@
-<!doctype html>
-<html lang="en">
-  <head>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     <link href="stylesheets/navbar.css" rel="stylesheet" type="text/css" />
-    <title>O Forte Carvalho</title>
-  </head>
-  <body>
+    <title>{{ title }}</title>
+</head>
+
+<body>
     <div class="container site-wrap">
-      <div class="cabecalho">
-        <div class="cabecalho-container">
-          <div class="cabecalho-esquerda">
-            <div class="logo">
-              <a to="#">
-                <img src="images/logo.png" alt="logo"/>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="menu-container">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="/">Home</a>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="/descricao">Sobre</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/ferramentas">Ferramentas e Tecnologias</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/time">Nosso Time</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/contato">Entre em Contato</a>
-                            </li>
-                        </ul>
+        <div class="cabecalho">
+            <div class="cabecalho-container">
+                <div class="cabecalho-esquerda">
+                    <div class="logo">
+                        <a to="#">
+                            <img src="images/logo.png" alt="logo" />
+                        </a>
                     </div>
                 </div>
-            </nav>
+                <div class="cabecalho-direita">
+                    <button id="loginButton" class="btn btn-outline-dark btn-sm" data-bs-target="#loginModal"
+                        data-bs-toggle="modal">
+                        Login
+                    </button>
+                    {{#isLogado}}
+                    <form action="/logout" method="get">
+                        <button type="submit" id="logoutButton" class="btn btn-outline-dark btn-sm">
+                            Logout
+                        </button>
+                    </form>
+                    {{/isLogado}}
+                </div>
+            </div>
+            <div class="menu-container">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="/">Home</a>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="/descricao">Sobre</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/ferramentas">Ferramentas e Tecnologias</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/time">Nosso Time</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/contato">Entre em Contato</a>
+                                </li>
+                                {{#isLogado}}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/mudarnome">Alterar Nome</a>
+                                </li>
+                                {{/isLogado}}
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
         </div>
-          <div class="corpo-container">
-              <div class="my-5 mx-5">
-                  <h1 class="text-center mb-3">Home</h1>
-                  <h2>Olá senhor(a)</h2>
-                  <p>
-                      Estamos aqui para ajudar você a degustar os melhores Whiskies disponíveis no mercado!
-                  </p>
-
-                  <h2 class="mt-3">Login</h2>
-                  <form>
-                      <div class="mb-3">
-                          <label for="exampleInputEmail1" class="form-label">Email</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      </div>
-                      <div class="mb-3">
-                          <label for="exampleInputPassword1" class="form-label">Senha</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1">
-                      </div>
-                      <button type="submit" class="btn btn-outline-dark">Logar</button>
-                  </form>
-              </div>
-          </div>
-      </div>
+        <div class="corpo-container">
+            <div class="my-5 mx-5">
+                <h1 class="text-center mb-3">Home</h1>
+                <h2 id="message">{{ message }}</h2>
+                <p>
+                    Estamos aqui para ajudar você a degustar os melhores Whiskies
+                    disponíveis no mercado!
+                </p>
+                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Login</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="/login" method="post">
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1" name="email"
+                                            aria-describedby="emailHelp" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">Senha</label>
+                                        <input type="password" class="form-control" name="senha"
+                                            id="exampleInputPassword1" />
+                                    </div>
+                                    <button type="submit" class="btn btn-outline-dark">
+                                        Logar
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
     <div class="footer">
         <footer class="footer mt-1 mb-2 bg-light text-center">
             <div class="container">
                 <div class="logo center">
                     <a to="#">
-                        <img src="images/logo.png" alt="logo"/>
+                        <img src="images/logo.png" alt="logo" />
                     </a>
                 </div>
                 <span class="text-muted">Todos os direitos reservados. 2021</span>
             </div>
         </footer>
     </div>
+    <script src="javascripts/loginModal.js"></script>
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
