@@ -12,6 +12,7 @@ require('dotenv').config();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var whiskyRoutes = require('./routes/whisky');
 
 var app = express();
 
@@ -36,6 +37,7 @@ app.use(morgan('combined'));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/whisky', whiskyRoutes)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
