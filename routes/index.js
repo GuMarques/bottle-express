@@ -55,14 +55,8 @@ router.post('/mudarnome', controlLogin, function(req, res) {
   res.redirect('/');
 })
 
-router.get('/teste', async (req, res) => {
-  res.send(await getUser());
-});
-
 startDatabase().then(async () => {
   await insertUser({title: 'Hello, now from the in-memory database!'});
 });
-
-
 
 module.exports = router;
