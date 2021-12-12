@@ -3,6 +3,8 @@ var router = express.Router();
 
 const Usuario = require('../models/Usuario');
 const messagelogin = require('../controls/messagelogin');
+const {startDatabase} = require('../database/mongo');
+const {insertUser, getUser} = require('../database/user');
 
 /* GET home page. */
 router.get('/', messagelogin, function(req, res, next) {
@@ -52,6 +54,14 @@ router.post('/mudarnome', controlLogin, function(req, res) {
   Usuario.setName(req.body.nome);
   res.redirect('/');
 })
+
+router.get('/teste', async (req, res) => {
+  res.send(await getUser());
+});
+
+startDatabase().then(async () => {
+  await insertUser({title: 'Hello, now from the in-memory database!'});
+});
 
 
 
