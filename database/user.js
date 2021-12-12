@@ -21,7 +21,7 @@ async function deleteUser(id) {
     });
 }
   
-async function updateAd(id, ad) {
+async function updateUSer(id, ad) {
     const database = await getDatabase();
     delete ad._id;
     await database.collection(collectionName).update(
@@ -38,5 +38,5 @@ module.exports = {
   insertUser,
   getUser,
   deleteUser,
-  updateAd,
+  updateUSer,
 };
