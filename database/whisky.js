@@ -21,14 +21,14 @@ async function deleteWhisky(id) {
     });
 }
 
-async function updateWhisky(id, ad) {
+async function updateWhisky(id, whisky) {
     const database = await getDatabase();
-    delete ad._id;
+    delete whisky._id;
     await database.collection(collectionName).update(
         { _id: new ObjectID(id), },
         {
             $set: {
-                ...ad,
+                ...whisky,
             },
         },
     );
