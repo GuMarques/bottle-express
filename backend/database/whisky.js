@@ -1,37 +1,43 @@
 // ./src/database/ads.js
-const {getDatabase} = require('./mongo');
+const { ObjectId } = require('mongodb');
+const { getDatabase } = require('./mongo');
 
 const collectionName = 'whisky';
 
-async function insertWhisky(user) {
+async function insertWhisky(whisky) {
     const database = await getDatabase();
-    const {insertedId} = await database.collection(collectionName).insertOne(user);
+    const { insertedId } = await database.collection(collectionName).insertOne(whisky);
     return insertedId;
 }
 
-async function getWhisky() {
+async function getWhiskys() {
     const database = await getDatabase();
     return await database.collection(collectionName).find({}).toArray();
+}
+
+async function getWhisky(id) {
+    const database = await getDatabase();
+    return await database.collection(collectionName).findOne({_id: new ObjectId(id)});
 }
 
 async function deleteWhisky(id) {
     const database = await getDatabase();
     await database.collection(collectionName).deleteOne({
-        _id: new ObjectID(id),
+        _id: new ObjectId(id),
     });
 }
 
 async function updateWhisky(id, whisky) {
     const database = await getDatabase();
-    delete whisky._id;
-    await database.collection(collectionName).update(
-        { _id: new ObjectID(id), },
+    await database.collection(collectionName).updateOne(
+        { _id: new ObjectId(id), },
         {
             $set: {
                 ...whisky,
             },
         },
     );
+    return id;
 }
 
 module.exports = {
@@ -39,4 +45,5 @@ module.exports = {
     getWhisky,
     deleteWhisky,
     updateWhisky,
+    getWhiskys,
 };
