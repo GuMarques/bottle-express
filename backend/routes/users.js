@@ -2,34 +2,52 @@ var express = require('express');
 const user = require("../database/user");
 var router = express.Router();
 
-/* GET users listing. */
 router.get('/list', async function (req, res, next) {
-    res.send(await user.getUser());
+    res.send(await user.getUsers());
 });
 
-router.post("/edit/:id/:name", async function (req, res) {
+router.get('/:id', async function (req, res, next) {
+    const id = req.params.id;
+    res.send(await user.getUserById(id));
+});
+
+router.post("/", async function (req, res) {
     let resposta = {status: true}
-    if (req.params.name === null || req.params.name === undefined || req.params.name === "") {
+    const { nome, email, senha} = req.body;
+    if (!nome || !email || !senha) {
         res.statusCode = 500;
         resposta.status = false;
-        resposta.error = "O nome do usuário não pode ser vazio!";
+        resposta.error = "Todos campos devem ser preenchidos";
         res.json(resposta);
         return
     }
-    await user.updateUser(req.params.id, {name: req.params.name});
+    const obj = {
+        nome,
+        email,
+        senha
+    }
+    const id = await user.insertUser(obj);
+    resposta.userId = id;
     res.json(resposta);
 })
 
-router.post("/:name", async function (req, res) {
+router.put("/", async function (req, res) {
     let resposta = {status: true}
-    if (req.params.name === null || req.params.name === undefined || req.params.name === "") {
+    const { id, nome, email, senha} = req.body;
+    if (!nome || !email || !senha || !id) {
         res.statusCode = 500;
         resposta.status = false;
-        resposta.error = "O nome do usuário não pode ser vazio!";
+        resposta.error = "Todos campos devem ser preenchidos";
         res.json(resposta);
         return
     }
-    await user.insertUser({name: req.params.name});
+    const obj = {
+        nome,
+        email,
+        senha
+    }
+    const userId = await user.updateUser(id, obj);
+    resposta.userId = userId;
     res.json(resposta);
 })
 
@@ -38,7 +56,7 @@ router.delete("/:id", function (req, res){
     if (!user.deleteUser(req.params.id)){
         res.statusCode = 500;
         resposta.status = false;
-        resposta.error = "Falha ao exlcuir o registro";
+        resposta.error = "Falha ao excluir o registro";
     }
     res.json(resposta);
 })

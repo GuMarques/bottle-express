@@ -16,7 +16,7 @@ app.use(
 app.use(express.json());
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/user', usersRouter);
 app.use('/whisky', whiskyRoutes);
 
 app.listen(PORT, () => {

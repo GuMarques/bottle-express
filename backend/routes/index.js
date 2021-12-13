@@ -55,8 +55,8 @@ const {insertUser, getUser} = require('../database/user');
   res.redirect('/');
 }) */
 
-startDatabase().then(async () => {
+/* startDatabase().then(async () => {
   await insertUser({title: 'Hello, now from the in-memory database!'});
-});
+}); */
 
 module.exports = router;
