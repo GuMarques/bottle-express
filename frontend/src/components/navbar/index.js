@@ -43,7 +43,7 @@ function Navbar() {
                     {useSelector(state => state.usuarioLogado) === 0 ? 
                         <>
                             <Link to="/login" className="btn btn-outline-dark btn-sm">Login</Link>
-                            <Link to="/newuser" className="btn btn-outline-dark btn-sm">Cadastro</Link>
+                            <Link to="/newwhisky" className="btn btn-outline-dark btn-sm">Faça uma Review!</Link>
                         </>
                         : 
                             <Link onClick={() => dispatch({type: 'LOGOUT'})} className="btn btn-outline-dark btn-sm">Sair</Link>
