@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    networks:
+      - backend
+      - frontend
+
+  frontend:
+    depends_on:
+      - backend
+    build:
+      context: ./frontend
+    ports:
+      - 3000:3000
+    networks:
+      - frontend
+
+networks:
+  backend:
+  frontend:

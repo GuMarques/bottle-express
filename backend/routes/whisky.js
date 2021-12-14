@@ -20,8 +20,8 @@ router.get('/user/:id', async function(req, res) {
 router.post("/", async function (req, res) {
     let resposta = {status: true}
     console.log(req.body);
-    const {imgLink, nome, destilaria, localidade, descricao, nota, review, userId} = req.body;
-    if (!imgLink || !nome || !destilaria || !localidade || !descricao || !nota || !review || !userId) {
+    const {imgLink, nome, destilaria, localidade, descricao, nota, review/* , userId */} = req.body;
+    if (!imgLink || !nome || !destilaria || !localidade || !descricao || !nota || !review /* || !userId */) {
         res.statusCode = 500;
         resposta.status = false;
         resposta.error = "Todos campos devem ser preenchidos";
@@ -36,7 +36,7 @@ router.post("/", async function (req, res) {
         nota,
         review,
         imgLink,
-        userId,
+        /* userId, */
     }
     const id = await whisky.insertWhisky(obj);
     resposta.whiskyId = id;
@@ -45,8 +45,8 @@ router.post("/", async function (req, res) {
 
 router.put("/", async function (req, res) {
     let resposta = {status: true}
-    const {imgLink, nome, destilaria, localidade, descricao, nota, review, id, userId} = req.body;
-    if (!imgLink || !nome || !destilaria || !localidade || !descricao || !nota || !review || !id || !userId) {
+    const {imgLink, nome, destilaria, localidade, descricao, nota, review, id/* , userId */} = req.body;
+    if (!imgLink || !nome || !destilaria || !localidade || !descricao || !nota || !review || !id /* || !userId */) {
         res.statusCode = 500;
         resposta.status = false;
         resposta.error = "Todos campos devem ser preenchidos";
@@ -61,7 +61,7 @@ router.put("/", async function (req, res) {
         nota,
         review,
         imgLink,
-        userId
+        /* userId */
     }
     const whiskyId = await whisky.updateWhisky(id, obj);
     resposta.whiskyId = whiskyId;

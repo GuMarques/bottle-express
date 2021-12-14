@@ -1,0 +1,27 @@
+[
+    {
+        "nome": "Gustavo Marques",
+        "email": "gustavo@email.cpm",
+        "senha": "teste12345"
+    },
+    {
+        "nome": "Jorge da Silva",
+        "email": "jorge@email.cpm",
+        "senha": "teste12345"
+    },
+    {
+        "nome": "Gabriel Augusto",
+        "email": "gabriel@email.cpm",
+        "senha": "teste12345"
+    },
+    {
+        "nome": "Silvia Joestar",
+        "email": "silvia@email.cpm",
+        "senha": "teste12345"
+    },
+    {
+        "nome": "Salvatori Leone",
+        "email": "salvatori@email.cpm",
+        "senha": "teste12345"
+    }
+]
