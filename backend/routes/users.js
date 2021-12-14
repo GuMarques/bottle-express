@@ -12,6 +12,7 @@ router.get('/:id', async function (req, res, next) {
 });
 
 router.post("/", async function (req, res) {
+    console.log(req.body);
     let resposta = {status: true}
     const { nome, email, senha} = req.body;
     if (!nome || !email || !senha) {

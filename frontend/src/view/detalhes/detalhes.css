@@ -1,0 +1,148 @@
+#container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: center;
+}
+
+#container #imagem{
+    width: 400px;
+    /* border: 1px solid #000000; */
+    border-radius: .25rem;
+    padding-right: 50px;
+    /* filter: drop-shadow(2px 2px 5px #00000040); */
+}
+
+#container #imagem img{
+    width: 400px;
+    padding: 20px;
+}
+
+#container #infos {
+    padding-left: 50px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#container #infos .localizacao {
+    display: flex;
+    font-size: 26px;
+}
+
+#container #infos .estrelas {
+    display: flex;
+    justify-content: left;
+
+}
+
+#container #infos .estrelas img {
+    width: 50px;
+}
+
+#container #notas-degustacao {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 30px;
+}
+
+#container #notas-degustacao .nota-container {
+    text-align: center;
+    font-size: 1.6rem;
+    width: 140px;
+}
+
+#container #notas-degustacao .nota-container p {
+    margin-bottom: 8px;
+}
+
+#container .nota-circulo {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 4px black;
+    border-style: solid;
+}
+
+#container #infos .nota {
+    height: 62px;
+    width: 62px;
+    text-align: center;
+    line-height: 62px;
+    vertical-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: white;
+}
+.icone-card {
+    width: 25px;
+    margin-right: 10px;
+}
+
+#container #infos #notas-degustacao .nota-container .nota-circulo.nota-5 {
+    background-color: #b30000;
+}
+
+#container #infos #notas-degustacao .nota-container .nota-circulo.nota-4 {
+    background-color: #e60000ec;
+}
+
+#container #infos #notas-degustacao .nota-container .nota-circulo.nota-3 {
+    background-color: #ff0000be;
+}
+
+#container #infos #notas-degustacao .nota-container .nota-circulo.nota-2 {
+    background-color: #ff1a1a96;
+}
+
+#container #infos #notas-degustacao .nota-container .nota-circulo.nota-1 {
+    background-color: #ff333398;
+}
+
+#review{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#review .review-header {
+    width: 400px;
+    text-align: right;
+    padding-right: 50px;
+}
+
+#review .review-janela {
+    height: 500px;
+    width: 610px;
+    overflow-y: auto;
+}
+
+#review .review-titulo h1{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+#review #review-botao {
+    width: 300px;
+    margin: 10px;
+}
+
+.destilaria {
+    font-size: 20px !important;
+}
+
+.card-text {
+    font-size: 26px;
+}

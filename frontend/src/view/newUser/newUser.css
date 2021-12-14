@@ -1,0 +1,67 @@
+#cadastro {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    /* background: rgb(3,194,235); */
+    background: #584452;
+    /* background: linear-gradient(135deg, rgba(3,194,235,1) 0%, rgba(49,200,178,1) 75%, rgba(0,255,196,1) 100%); */ 
+}
+.cadastro-container {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px #00000044 solid;
+    border-radius: 0.5rem;
+    background-color: #FBFBFB;
+    filter: drop-shadow(2px 2px 5px #00000040);
+}
+
+.cadastro-container h1 {
+    text-align: center;
+}
+
+.cadastro-container p {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.text-container {
+    padding: 20px;
+    padding-top: 0;
+}
+
+.input-container {
+    padding: 20px;
+}
+
+.nova-conta {
+    display: block;
+    padding: 20px;
+    text-align: center;
+    padding-bottom: 0;
+    color: #000000;
+    margin-left: auto;
+    margin-right: auto;
+    width: 316px;
+}
+
+.icone {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 24px;
+}
+
+a:hover {
+    color: #000000;
+}
+
+a:visited {
+    color: #000000;
+}
+
+.btn {
+    margin: 20px;
+    margin-top: 10px;
+    width: calc(100% - 40px);
+}

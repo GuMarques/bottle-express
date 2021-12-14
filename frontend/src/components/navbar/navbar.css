@@ -1,0 +1,128 @@
+.container {
+    border-bottom: 1px solid black;
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.6);
+    max-width: 100%;
+    padding: 0;
+    margin-top: 30px;
+  }
+  
+  .cabecalho {
+    max-width: 1220px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cabecalho-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+  }
+  
+  .logo {
+    width: 130px;
+  }
+  .logo img {
+    width: 130px;
+  }
+  
+  .cabecalho-esquerda {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cabecalho-esquerda form input {
+    outline: none;
+  }
+  .cabecalho-esquerda form input[type="search"] {
+    /* background: #ededed url(/src/icones/search.svg) no-repeat 9px center; */
+    background-size: 26px;
+    -webkit-appearance: textfield;
+    box-sizing: content-box;
+    font-family: inherit;
+    font-size: 1rem;
+    border: solid 1px #ccc;
+    padding: 9px 10px 9px 52px;
+    width: 200px;
+    margin-left: 30px;
+  
+    -webkit-border-radius: 10em;
+    -moz-border-radius: 10em;
+    border-radius: 10em;
+  
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  
+  .cabecalho-esquerda form input[type="search"]:focus {
+    width: 340px;
+    background-color: #fff;
+    border-color: #66cc75;
+  
+    -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
+    -moz-box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
+    box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
+  }
+  
+  .cabecalho-direita {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cabecalho-direita .btn {
+    width: 80px;
+    margin-left: 5px;
+    margin-right: 5px;
+    /* border-radius: 5em; */
+    /* padding-top: 8px; */
+    /* padding-bottom: 8px; */
+    font-size: 1rem;
+    /* height: 44px; */
+  }
+  
+  /* .cabecalho-direita button {
+    width: 100px;
+    background-color: #ededed;
+    height: 100%;
+    margin: 0 5px;
+    -webkit-border-radius: 22;
+    -moz-border-radius: 22;
+    border-radius: 22px;
+    padding: 10px 20px 10px 20px;
+    border: solid 1px #ccc;
+    text-decoration: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  
+  .cabecalho-direita button:hover {
+    border-color: #66cc75;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
+    -moz-box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
+    box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
+  } */
+  
+  .menu-container {
+    max-width: 1220px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 30px;
+  }
+  
+  .width-100 {
+    width: 100%;
+  }
+
+  .align-right {
+    margin-left: auto;
+    margin-right: 50px;
+  }
+
+  .nav-link {
+    cursor: pointer;
+  }

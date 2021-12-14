@@ -19,6 +19,7 @@ router.get('/user/:id', async function(req, res) {
 
 router.post("/", async function (req, res) {
     let resposta = {status: true}
+    console.log(req.body);
     const {imgLink, nome, destilaria, localidade, descricao, nota, review, userId} = req.body;
     if (!imgLink || !nome || !destilaria || !localidade || !descricao || !nota || !review || !userId) {
         res.statusCode = 500;
