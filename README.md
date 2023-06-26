@@ -1,4 +1,4 @@
-# Projeto de Programação Web 2: Whisky Reviews
+# Projeto de Programação Web 2: O Forte Carvalho
 
 Este projeto foi desenvolvido como parte da disciplina de Programação Web 2, ministrada pelo professor Dr. Adriano Rivolli da Silva. O objetivo é criar um site full stack que permite aos usuários compartilhar suas avaliações, notas e comentários sobre diferentes whiskies.
 
